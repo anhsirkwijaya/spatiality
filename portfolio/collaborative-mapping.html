@@ -31,16 +31,13 @@
     line-height: 1.7;
 }*/
 
-.image-slot {
+.image-container img {
     width: 100%;
-    height: 500px;
-    background-color: #ddd;
-    margin: 30px 0;
-    display: flex;
+    height: auto;
+    margin: 30px auto;
+    display: block;
     align-items: center;
     justify-content: center;
-    color: #666;
-    font-size: 14px;
 }
 
 /* TANGGAL */
@@ -215,7 +212,7 @@ Works <span class="arrow">▾</span>
 <div class="dropdown-content">
 
 <a href="../experience.html">Experience</a>
-<a href="../portofolio.html">Portofolio</a>
+<a href="../portfolio.html">portfolio</a>
 <a href="../services.html">Services</a>
 <a href="../gallery.html">Gallery</a>
 <a href="../resources.html">Resources</a>
@@ -252,7 +249,7 @@ Works <span class="arrow">▾</span>
 <div class="mobile-dropdown-content">
 
 <a href="works/Experience/index.html">Experience</a>
-<a href="../portofolio.html">Portofolio</a>
+<a href="../portfolio.html">portfolio</a>
 <a href="../services.html">Services</a>
 <a href="../gallery.html">Gallery</a>
 <a href="../resources.html">Resources</a>
@@ -282,8 +279,9 @@ Traceability to Plantation by Smallholder Farmers</h2>
 Sat 28 Mar 2026 • 16:19 GMT by Spatiality
 </p>
 
-<div class="image-slot"
-style="background-image:url('../assets/media/globe-asia.gif')"></div>
+<div class="image-container">
+    <img src="../assets/media/traceability.png" alt="Mapping Illustration">
+</div>
 
 <p class="image-caption">
 Mapping interface used for farmer data collection and spatial traceability workflow.
@@ -296,7 +294,7 @@ I provide practicable solution for traceable to plantation map that long been bu
 </p>
 
 <p>
-I produce map in a very large size for offline use within defined supply chain. The content consist of administrative boundary, road network, river, forest utilization, peatland, company concession, and commodity coverage. I suggest using <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="youtube-link">Avenza Maps
+I produce map in a very large size for offline use within defined supply chain. The content consist of administrative boundary, road network, river, forest utilization, peatland, company concession, and commodity coverage. I suggest using <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="youtube-link">Locus GIS
     </a> for mapping which able to be used in any generation of smartphone with GPS sensor wether online or offline. I also prepared attribute schema form in this app so each farmer can map their land and fill out the data.
 
 
@@ -314,8 +312,9 @@ Once it’s all set, I provide a hands-on workshop to all farmers on how to work
 
 <div class="background-section">
 
-<div class="image-slot"
-style="background-image:url('../assets/media/globe-asia.gif')"></div>
+<div class="image-container">
+    <img src="../assets/media/CM2.png" alt="Mapping Illustration">
+</div>
 
 <p class="image-caption">
 Mapping interface used for farmer data collection and spatial traceability workflow.
@@ -323,7 +322,7 @@ Mapping interface used for farmer data collection and spatial traceability workf
 </p>
 
 <p>
-As they go all the place to map farmer’s land, I build a toolbox to automate the data compilation processing in bulk. The workflow is simple but require some lines of python code for additional process. The exported data from Avenza Map is in kmz, I converted to shapefile then input it to the toolbox to do all the hard work. These are data structure tidying, codification, calculating area, pull data for land zone utilization, peatland, concession, and built up coverage.
+As they go all the place to map farmer’s land, I build a toolbox to automate the data compilation processing in bulk. The workflow is simple but require some lines of python code for additional process. The exported data from Locus GIS then prepared as an input into the toolbox to do all the hard work. These are data structure tidying, codification, calculating area, pull data for land zone utilization, peatland, concession, and built up coverage.
 
 </p>
 
