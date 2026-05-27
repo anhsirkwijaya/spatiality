@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Gallery | Spatiality</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html" class="logo">Spatiality</a>
+
+<nav class="desktop-nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+Works <span class="arrow">▾</span>
+</button>
+
+<div class="dropdown-content">
+<a href="works/Experience/index.html">Experience</a>
+<a href="works/Portofolio/index.html">Portofolio</a>
+<a href="works/Services/index.html">Services</a>
+<a href="Gallery.html" class="active">Gallery</a>
+<a href="works/Resouces/index.html">Resources</a>
+</div>
+
+</div>
+
+<a href="resume.html">Resume</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span><span></span><span></span>
+</div>
+
+</header>
+
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+
+<div class="mobile-dropdown">
+<div class="mobile-dropdown-btn">
+Works <span class="arrow">▾</span>
+</div>
+
+<div class="mobile-dropdown-content">
+<a href="works/Experience/index.html">Experience</a>
+<a href="works/Portofolio/index.html">Portofolio</a>
+<a href="works/Services/index.html">Services</a>
+<a href="works/Gallery/index.html">Gallery</a>
+<a href="works/Resouces/index.html">Resources</a>
+</div>
+</div>
+
+<a href="resume.html">Resume</a>
+
+</div>
+</div>
+
+
+<main class="gallery-container">
+
+<h2>Gallery</h2>
+
+<div class="masonry">
+
+  <!-- ITEM -->
+  <div class="masonry-item">
+    <img src="assets/media/picture1.jpg" alt="">
+  </div>
+
+  <div class="masonry-item">
+    <img src="assets/media/picture2.gif" alt="">
+  </div>
+
+  <!-- VIDEO -->
+  <div class="masonry-item">
+    <video src="assets/media/sample.mp4" muted loop></video>
+  </div>
+
+  <!-- DUPLICATE AS NEEDED -->
+  <div class="masonry-item">
+    <img src="assets/media/picture1.jpg">
+  </div>
+
+  <div class="masonry-item">
+    <img src="assets/media/picture2.gif">
+  </div>
+
+</div>
+
+</main>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img">
+  <video class="lightbox-video" controls></video>
+</div>
+
+
+<footer>
+
+<div class="copyright">
+© 2026 - Krishna Wijaya
+</div>
+
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+
+</body>
+</html>

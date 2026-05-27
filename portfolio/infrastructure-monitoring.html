@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Peatland Infrastructure Monitoring | Spatiality</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* tambahan kecil untuk artikel */
+/*.article-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.article-content {
+    flex: 3;
+}
+
+.article-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}*/
+
+.image-slot {
+    width: 100%;
+    height: 500px;
+    background-color: #ddd;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* TANGGAL */
+.article-date {
+    font-size: 14px;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* CAPTION GAMBAR */
+.image-caption {
+    font-size: 13px;
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 10px;
+    text-align:center;
+}
+
+/* CREDIT FOTO */
+.photo-credit {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* FOOTER ARTIKEL */
+.article-footer {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+/* SECTION TITLE */
+.article-footer h4 {
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background: white;
+}
+
+.share-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #333;
+    transition: 0.3s;
+}
+
+/* TWITTER */
+.share-btn.twitter:hover {
+    background: #1DA1F2;
+    border-color: #1DA1F2;
+}
+.share-btn.twitter:hover svg {
+    fill: white;
+}
+
+/* LINKEDIN */
+.share-btn.linkedin:hover {
+    background: #0077B5;
+    border-color: #0077B5;
+}
+.share-btn.linkedin:hover svg {
+    fill: white;
+}
+
+/* REDDIT */
+.share-btn.reddit:hover {
+    background: #FF4500;
+    border-color: #FF4500;
+}
+.share-btn.reddit:hover svg {
+    fill: white;
+}
+
+/* RELATED */
+.related-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.related-item a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #1a0dab;
+}
+
+.related-item p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.related-item span {
+    font-size: 12px;
+    color: #888;
+}
+
+/* AUTHOR */
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.author-photo {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.author-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/*.article-sidebar {
+    flex: 1;
+}
+
+.article-sidebar h3 {
+    margin-bottom: 15px;
+}*/
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html" class="logo">Spatiality</a>
+
+<nav class="desktop-nav">
+
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+Works <span class="arrow">▾</span>
+</button>
+
+<div class="dropdown-content">
+
+<a href="../experience.html">Experience</a>
+<a href="../portofolio.html">Portofolio</a>
+<a href="../services.html">Services</a>
+<a href="../gallery.html">Gallery</a>
+<a href="../resources.html">Resources</a>
+
+</div>
+</div>
+
+<a href="../resume.html">Resume</a>
+
+</nav>
+
+</header>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+
+<div class="mobile-dropdown">
+
+<div class="mobile-dropdown-btn">
+Works <span class="arrow">▾</span>
+</div>
+
+<div class="mobile-dropdown-content">
+
+<a href="works/Experience/index.html">Experience</a>
+<a href="../portofolio.html">Portofolio</a>
+<a href="../services.html">Services</a>
+<a href="../gallery.html">Gallery</a>
+<a href="../resources.html">Resources</a>
+
+</div>
+
+</div>
+
+<a href="../resume.html">Resume</a>
+
+</div>
+
+</div>
+
+<main class="about-container">
+
+<div class="about-left">
+
+<div class="about-intro">
+
+<div class="about-text">
+
+<h2>Peatland Infrastructure Monitoring</h2>
+
+<p class="article-date">
+Sat 28 Mar 2026 • 16:19 GMT by Spatiality
+</p>
+
+<div class="image-slot"
+style="background-image:url('../assets/media/globe-asia.gif')"></div>
+
+<p class="image-caption">
+Mapping interface used for farmer data collection and spatial traceability workflow.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+<p>
+The BRGM have built thousands of water infrastructure to reduce the risk of peatland wildfire. As time went by, all the infrastructure needs to be maintain for its function. To minimize paper use and enhance productivity for monitoring assessment, I prepare a survey map and its attribute schema for Avenza Maps. The form includes each dimension of canal blocks, damage information, infrastructure id, and its photos to depict infrastructure condition. The data collected were exported in kmz and csv. Kmz to plot in GI system including its photo attachment, while csv is for tabular data, auto reporting, and repairment budgeting. The monitoring assessment were held in Riau and Kalimantan Tengah for a week. The data, map, report and its repairment budget were successfully finished a night before heading back to headquarter, which was impossible back then when using a paper form.
+</p>
+
+<p>
+I produce map in a very large size for offline use within defined supply chain. The content consist of administrative boundary, road network, river, forest utilization, peatland, company concession, and commodity coverage. I suggest using <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="youtube-link">Avenza Maps
+    </a> for mapping which able to be used in any generation of smartphone with GPS sensor wether online or offline. I also prepared attribute schema form in this app so each farmer can map their land and fill out the data.
+
+
+</p>
+
+</div>
+</div>
+
+<p>
+Once it’s all set, I provide a hands-on workshop to all farmers on how to work with this app on their smartphone. At first they struggle on how to understand the basic concepts, but as they go practicing to map a field, they quickly catch the idea. Then begin to map and teach other farmer to do so.
+
+</p>
+
+<h2>Custom Toolbox</h2>
+
+<div class="background-section">
+
+<div class="image-slot"
+style="background-image:url('../assets/media/globe-asia.gif')"></div>
+
+<p class="image-caption">
+Mapping interface used for farmer data collection and spatial traceability workflow.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+<p>
+As they go all the place to map farmer’s land, I build a toolbox to automate the data compilation processing in bulk. The workflow is simple but require some lines of python code for additional process. The exported data from Avenza Map is in kmz, I converted to shapefile then input it to the toolbox to do all the hard work. These are data structure tidying, codification, calculating area, pull data for land zone utilization, peatland, concession, and built up coverage.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="about-right">
+
+
+<div class="tools-logos">
+
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+
+</div>
+
+</div>
+
+</main>
+
+<div class="article-footer">
+
+<!-- SHARE -->
+<div class="share-section">
+<h4>SHARE THIS:</h4>
+<div class="share-buttons">
+
+<a href="https://twitter.com/intent/tweet?url=YOUR_URL" target="_blank" class="share-btn twitter">
+    <!-- Twitter (X tetap pakai burung biar familiar) -->
+    <svg viewBox="0 0 24 24">
+        <path d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.2-1 .9-1.4 2.3-1.1 3.6-3.3-.2-6.3-1.7-8.3-4.2-1.1 1.8-.5 4.1 1.3 5.2-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.7 3.4 4.1-.6.2-1.2.2-1.8.1.5 1.6 2.1 2.7 3.8 2.8-1.4 1.1-3.2 1.7-5 1.7H2c1.8 1.2 4 1.8 6.2 1.8 7.4 0 11.5-6.1 11.5-11.5v-.5c.8-.6 1.5-1.3 2.1-2.1z"/>
+    </svg>
+</a>
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank" class="share-btn linkedin">
+    <svg viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8h4v12h-4V8zm7.5 0h3.8v1.7h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.7 2.6 4.7 6v6h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-4V8z"/>
+    </svg>
+</a>
+
+<a href="https://www.reddit.com/submit?url=YOUR_URL" target="_blank" class="share-btn reddit">
+    <svg viewBox="0 0 24 24">
+        <path d="M24 12c0-1.1-.9-2-2-2-.5 0-1 .2-1.4.6-1.4-1-3.2-1.6-5.1-1.7l1-3 2.1.5c0 .9.7 1.6 1.6 1.6S22 7.3 22 6.5 21.3 5 20.4 5c-.6 0-1.2.4-1.5.9l-2.6-.6c-.2 0-.4.1-.5.3l-1.2 3.6c-2 .1-3.8.7-5.3 1.7-.4-.4-.9-.6-1.4-.6-1.1 0-2 .9-2 2 0 .7.4 1.3.9 1.7-.1.4-.1.7-.1 1.1 0 3 3.6 5.4 8 5.4s8-2.4 8-5.4c0-.4 0-.8-.1-1.1.6-.4 1-1 1-1.7zM8 13.5c-.8 0-1.5-.7-1.5-1.5S7.2 10.5 8 10.5s1.5.7 1.5 1.5S8.8 13.5 8 13.5zm8 0c-.8 0-1.5-.7-1.5-1.5S15.2 10.5 16 10.5s1.5.7 1.5 1.5S16.8 13.5 16 13.5zm-8.5 2.3c.5.5 1.7 1.1 4.5 1.1s4-.6 4.5-1.1c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0-.4.4-1.4.9-3.8.9s-3.4-.5-3.8-.9c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7z"/>
+    </svg>
+</a>
+
+</div>
+
+
+<hr>
+
+<!-- RELATED -->
+<div class="related-section">
+<h4>RELATED:</h4>
+
+<div class="related-grid">
+
+<div class="related-item">
+<a href="../portfolio/plant-cencus-mapping.html">Plant Cencus Mapping</a>
+<p>December 19, 2022</p>
+<span>Similar post</span>
+</div>
+
+<div class="related-item">
+<a href="../portfolio/collaborative-mapping.html">Collaborative Mapping:
+Traceability to Plantation by Smallholder Farmers</a>
+<p>January 24, 2023</p>
+<span>Similar post</span>
+</div>
+
+<div class="related-item">
+<a href="../portfolio/reporting-app.html">Reporting App Using ArcGIS Survey123</a>
+<p>December 10, 2023</p>
+<span>Similar post</span>
+</div>
+
+</div>
+</div>
+
+<hr>
+
+<!-- AUTHOR -->
+<div class="author-section">
+
+<div class="author-photo"
+style="background-image:url('../assets/media/me.jpeg')"></div>
+
+<div>
+<p class="author-label">PUBLISHED BY</p>
+<h4>John</h4>
+<a href="../portfolio.html">View all posts by John</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="copyright">
+© 2026 - Krishna Wijaya
+</div>
+
+<div class="footer-icons">
+
+<a href="mailto:krishnawijaya@ymail.com" title="Email">
+<calcite-icon icon="envelope" scale="l"></calcite-icon>
+</a>
+
+<a href="https://www.linkedin.com/in/krishna-wijaya-05b10b245/" target="_blank" title="LinkedIn">
+<calcite-icon icon="social-media" scale="l"></calcite-icon>
+</a>
+
+<a href="#" class="bmc-btn">
+<span style="margin-right:5px">☕</span> Buy me a coffee
+</a>
+
+</div>
+
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

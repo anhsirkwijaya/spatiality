@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Gallery | Spatiality</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+<script type="module">
+import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '.masonry',
+  children: 'a',
+  pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js')
+});
+
+lightbox.init();
+</script>
+<script type="module" src="https://js.arcgis.com/calcite-components/2.4.0/calcite.esm.js"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/calcite-components/2.4.0/calcite.css"/>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html" class="logo">Spatiality</a>
+
+<nav class="desktop-nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+Works <span class="arrow">▾</span>
+</button>
+
+<div class="dropdown-content">
+
+<a href="experience.html">Experience</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="services.html">Services</a>
+<a href="gallery.html" class="active">Gallery</a>
+<a href="resources.html">Resources</a>
+
+</div>
+</div>
+
+<a href="resume.html">Resume</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-nav">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+
+<div class="mobile-dropdown">
+
+<div class="mobile-dropdown-btn">
+Works <span class="arrow">▾</span>
+</div>
+
+<div class="mobile-dropdown-content">
+
+<a href="works/Experience/index.html">Experience</a>
+<a href="works/portfolio/index.html">Portfolio</a>
+<a href="works/Services/index.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="works/Resouces/index.html">Resources</a>
+
+</div>
+</div>
+
+<a href="resume.html">Resume</a>
+
+</div>
+</div>
+
+<main class="gallery-container">
+
+<h2>Gallery</h2>
+
+<div class="masonry">
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/bad-map.png" 
+     target="_blank">
+    <img src="assets/media/bad-map.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Bad Map</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media//choropleth.png"
+     target="_blank">
+    <img src="assets/media/choropleth.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Choropleth</span>
+    </div>
+  </a>
+</div>
+
+  <!-- VIDEO -->
+<div class="gallery-item">
+  <a href="assets/media/Komodo Island Wireframe Emission.mp4"
+     data-pswp-type="html"
+     data-pswp-width="1280"
+     data-pswp-height="720">
+    <video src="assets/media/Komodo Island Wireframe Emission.mp4" autoplay muted loop></video>
+    <div class="overlay">
+      <calcite-icon icon="video"></calcite-icon>
+      <span>Komodo Island Wireframe Emission</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/delta.png" 
+     target="_blank">
+    <img src="assets/media/delta.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Delta</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/Dot.png" 
+     target="_blank">
+    <img src="assets/media/Dot.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Dot</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/drainage-pattern.png" 
+     target="_blank">
+    <img src="assets/media/drainage-pattern.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Drainage Pattern</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/gen-z-ratioed.png" 
+     target="_blank">
+    <img src="assets/media/gen-z-ratioed.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Gen Z Ratioed</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/globe-asia.gif" 
+     target="_blank">
+    <img src="assets/media/globe-asia.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Globe Asia</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/halftone-relief.png" 
+     target="_blank">
+    <img src="assets/media/halftone-relief.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Halftone Relief</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/haze.gif" 
+     target="_blank">
+    <img src="assets/media/haze.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Haze</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/iceland-pop.png" 
+     target="_blank">
+    <img src="assets/media/iceland-pop.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Iceland Population</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/icy.gif" 
+     target="_blank">
+    <img src="assets/media/icy.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Icy</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/Japan.png" 
+     target="_blank">
+    <img src="assets/media/Japan.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Japan</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/jkt-covid-chart.png" 
+     target="_blank">
+    <img src="assets/media/jkt-covid-chart.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Jakarta COVID-19 Chart</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/jogja-island.png" 
+     target="_blank">
+    <img src="assets/media/jogja-island.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Jogja Island</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/joyplot.png" 
+     target="_blank">
+    <img src="assets/media/joyplot.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Joyplot</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/map2.png" 
+     target="_blank">
+    <img src="assets/media/map2.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Map 2</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/moon.gif" 
+     target="_blank">
+    <img src="assets/media/moon.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Moon</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/north-america-geology.png" 
+     target="_blank">
+    <img src="assets/media/north-america-geology.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>North America Geology</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/one-piece.gif"
+     target="_blank">
+    <img src="assets/media/one-piece.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>One Piece</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/palau-archipelago.png" 
+     target="_blank">
+    <img src="assets/media/palau-archipelago.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Palau Archipelago</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/pop-density.png" 
+     target="_blank">
+    <img src="assets/media/pop-density.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Population Density</span>
+    </div>
+  </a>
+</div>
+
+    <!-- ITEM 1 -->
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/rupat.png" 
+     target="_blank">
+    <img src="assets/media/rupat.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Rupat</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/sumatera-flipped.png" 
+     target="_blank">
+    <img src="assets/media/sumatera-flipped.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Sumatera Flipped</span>
+    </div>
+  </a>
+</div>
+
+    <!-- ITEM 1 -->
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/teluk-bayur.png" 
+     target="_blank">
+    <img src="assets/media/teluk-bayur.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Teluk Bayur</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/viewshed.png " 
+     target="_blank">
+    <img src="assets/media/viewshed.png">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Viewshed</span>
+    </div>
+  </a>
+</div>
+
+  <!-- ITEM 1 -->
+<div class="gallery-item">
+  <a href="assets/media/vapor.gif" 
+     target="_blank">
+    <img src="assets/media/vapor.gif">
+    <div class="overlay">
+      <calcite-icon icon="image"></calcite-icon>
+      <span>Vapor</span>
+    </div>
+  </a>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="copyright">
+© 2026 - Krishna Wijaya
+</div>
+
+<div class="footer-icons">
+
+<a href="mailto:krishnawijaya@ymail.com">
+<calcite-icon icon="envelope" scale="l"></calcite-icon>
+</a>
+
+<a href="https://www.linkedin.com/in/krishna-wijaya-05b10b245/" target="_blank">
+<calcite-icon icon="social-media" scale="l"></calcite-icon>
+</a>
+
+</div>
+
+</footer>
+
+<script src="js/main.js"></script>
+<script type="module" src="js/gallery-lightbox.js"></script>
+</body>
+</html>
