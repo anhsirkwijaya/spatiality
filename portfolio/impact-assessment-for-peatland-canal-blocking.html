@@ -40,6 +40,23 @@
     justify-content: center;
 }
 
+.video-container {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
 /* TANGGAL */
 .article-date {
     font-size: 14px;
@@ -275,7 +292,7 @@ Works <span class="arrow">▾</span>
 <h2>Peatland Canal Blocking Impact Assessment</h2>
 
 <p class="article-date">
-Sat 28 Mar 2026 • 16:19 GMT by Spatiality
+Mon 6 Jun 2023 • 16:19 GMT by Spatiality
 </p>
 
 <div class="image-container">
@@ -288,21 +305,34 @@ Dipwell Specification and Placement Configuration.
 </p>
 
 <p>
-Back in my organization, MPA were fascilitate to execute some procedures to reduce the risk or peatland wildfire. The activities includes daily monitoring on dry season, wetting the peatland, and not limited to extinguish the hotspot. Wetting the peatland during dry season is exhausting and require operation expenses. To claim the expense, MPA group must create a report of their activity including the geotagged photo documentation. The hard work come after dozens of reports need to be verified by GIS officer. 
+Peatland hydrological system is quite unique and complex. Unlike watershed system, peatland system is more like a sponge, divided by major rivers as a peat hydrological unit. If watershed management is commonly focused on how to manage the water flow, peatland management is more focused on how to maintain the water level. The water level in peatland is crucial to maintain the ecosystem and prevent the risk of wildfire. One of the common practices to maintain the water level is by blocking the canal that was built for drainage or transportation.
+
 </p>
 
 <p>
-Bored seeing my co worker keep themselves busy doing so, I build a reporting app using ArcGIS Survey123 that can be filled out through browser or app wether offline or online. The workflow is simple, the mpa group only fill out the data required, photos, and their coordinate of activity, all in one app. The report can be stored to memory which later can be submitted once their device is online. The submitted report can be monitored through dashboard and the report can be generated in a single click to pdf.
+So, how does it work? The canal blocking is done by building a dam in the canal, then the water will be blocked and the water level will be maintained. The dam is built by using a material that can partially blocks water, like peat, wood, or membrane. The dam is built in a way that it can block water and maintain the water level, but it can also allow some water to flow through it to prevent flooding. Check the video below to learn how the canal blocking works
 </p>
 
+<div class="video-container">
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/_Xv_HR-CpUE"
+        title="YouTube video player"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
 </div>
-</div>
+<p class="image-caption">
+Rewetting The Degraded Peatland Through Canal BLocking.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
 
 <p>
-This app is not limited to a specific activity. Other uses like inventory, census, scientific survey, etc can be implemented using this app.
+I engage local communities to install the diwpells nearby the canal blocking site to monitor the water level. The diwpells are installed in a way that they can measure the water level in the peatland and the canal, so we can compare the water level before and after the canal blocking. Dipwells should be installed before the canal blocking is built to get the baseline data, and then after the canal blocking is finished to get the impact data. The data should be collected during the dry season to avoid disturbance input from rainfall. The data collected from the diwpells will be used to assess the impact of the canal blocking on the water level in the peatland and the canal. The data will be analyzed to see if there is a significant change in the water level after the canal blocking, and if there is a significant change, we can conclude that the canal blocking has an impact on the water level in the peatland and the canal.
 </p>
 
-<h2>Custom Toolbox</h2>
+<h2>Monitoring Setup</h2>
 
 <div class="background-section">
 
@@ -315,10 +345,42 @@ Installation, Data Collecting, and Analysis.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
+<h2>Result</h2>
+
 <p>
-As they go all the place to map farmer’s land, I build a toolbox to automate the data compilation processing in bulk. The workflow is simple but require some lines of python code for additional process. The exported data from Avenza Map is in kmz, I converted to shapefile then input it to the toolbox to do all the hard work. These are data structure tidying, codification, calculating area, pull data for land zone utilization, peatland, concession, and built up coverage.
+So, there are two water level data, the baseline and the impact. Both data were interpolated to get the water level distribution in the peatland and the canal. Then, the water level distribution before and after the canal blocking were calculated using cut and fill method to estimate the impacted area and water conserved during the dry season. See the water level profile graph below, the blue dashed line is the water level before the canal blocking, and the green dashed line is the water level after the canal blocking. The graph shows that there is a significant increase in the water level after the canal blocking, which indicates that the canal blocking has an impact on the water level in the peatland.
 
 </p>
+
+<div class="background-section">
+
+<div class="image-container">
+    <img src="../assets/media/PCB5.png" alt="Installation, Data Collecting, and Analysis">
+</div>
+
+<p class="image-caption">
+3d Section View Between Ground Layer and Water Level.
+<span class="photo-credit">Documentation by Spatiality</span>
+
+<div class="background-section">
+
+<div class="image-container">
+    <img src="../assets/media/PCB6.png" alt="Installation, Data Collecting, and Analysis">
+</div>
+
+<p class="image-caption">
+Water Table Distribution, Before (Left) and After (Right).
+<span class="photo-credit">Documentation by Spatiality</span>
+
+<div class="background-section">
+
+<div class="image-container">
+    <img src="../assets/media/PCB3.png" alt="Installation, Data Collecting, and Analysis">
+</div>
+
+<p class="image-caption">
+Water Level Profile Graph.
+<span class="photo-credit">Documentation by Spatiality</span>
 
 </div>
 
@@ -423,7 +485,7 @@ style="background-image:url('../assets/media/me.jpeg')"></div>
 <footer>
 
 <div class="copyright">
-© 2026 - Krishna Wijaya
+© 2026 - Spatiality
 </div>
 
 <div class="footer-icons">
