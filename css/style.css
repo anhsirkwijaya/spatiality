@@ -73,11 +73,15 @@ header{
 }
 
 .logo{
-    font-size:1.6rem;
-    font-weight:bold;
-    letter-spacing:0.25px;
-    color:white;
+    display:flex;
+    align-items:center;
     text-decoration:none;
+}
+
+.logo img{
+    height:35px;
+    width:auto;
+    display:block;
 }
 
 /* =========================
