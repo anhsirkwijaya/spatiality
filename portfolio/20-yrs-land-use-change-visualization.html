@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rob Flooding Scenario and Risk Assessment</title>
+<title>20 Years of Land Use Change Visualization | Spatiality</title>
 
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/icon.png">
@@ -278,7 +278,7 @@ Works <span class="arrow">▾</span>
 
 <div class="about-text">
 
-<h2>Rob Flooding Scenario and Risk Assessment</h2>
+<h2>Land Use Change Visualization for Smallholder Plots</h2>
 
 <p class="article-date">
 Mon 15 Dec 2025 • 16:19 GMT by Spatiality
@@ -286,103 +286,66 @@ Mon 15 Dec 2025 • 16:19 GMT by Spatiality
 
 <div class="image-container">
     <video autoplay muted loop playsinline>
-        <source src="../assets/media/semarang-tidal-flood.mp4" type="video/mp4">
+        <source src="../assets/media/landuse change.mp4" type="video/mp4">
     </video>
 </div>
 
 <p class="image-caption">
-Shoreline Degradation Due to Tidal Inundation.
+Land Use Change Visualization on Smallholder Plots.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
 <p>
-    Simulating Rob inundation (tidal flooding caused by high tides or rising sea levels) in ILWIS (Integrated Land and Water Information System) essentially figure out which pieces of land are lower than the rising ocean water, and whether that water can actually reach them.
+    Land use change analysis is a fundamental task in GIS, typically involving a comparative study of two snapshots in time. However, practitioners often face the persistent challenge of sourcing cloud-free imagery for classification, particularly across large project areas. MapBiomas has significantly lowered this barrier by providing ready-to-use land cover data spanning 1990 to 2024, making it an invaluable resource for research and field verification.
 </p>
 
 <p>
-    To run a realistic simulation, ILWIS needs two primary types of data: where the ground is and how high the water will get.
+    While the <a href="https://platform.indonesia.mapbiomas.org/coverage/coverage_lclu?t[regionKey]=indonesia&t[ids][]=4-1-1&t[divisionCategoryId]=2&tl[id]=1&tl[themeKey]=coverage&tl[subthemeKey]=coverage_lclu&tl[pixelValues][]=40&tl[pixelValues][]=35&tl[pixelValues][]=9&tl[pixelValues][]=21&tl[pixelValues][]=30&tl[pixelValues][]=24&tl[pixelValues][]=25&tl[pixelValues][]=3&tl[pixelValues][]=5&tl[pixelValues][]=76&tl[pixelValues][]=27&tl[pixelValues][]=13&tl[pixelValues][]=31&tl[pixelValues][]=33&tl[legendKey]=default&tl[year]=2024" target="_blank" class="MapBiomas-link">MapBiomas</a>
+     platform is excellent for quick insights, I prefer to integrate this data into my own workflows using Google Earth Engine. By customizing the processing pipeline, I can extract and visualize data within specific Areas of Interest (AOI) for offline analysis.
 </p>
 
 <p>
-    Digital Surface Model (DSM) is the absolute core data. It is a pixel-based map where every pixel contains a value showing the height of the ground above sea level. In Indonesia, researchers frequently use DEMNAS data because its high detail reveals exactly which neighborhoods or streets sit in low-lying depressions. For the detailed result, DSM generated from aerial mapping would be better.
-</p>
-<p>
-    Tidal Data & Sea Level Rise (SLR) Scenarios provide the water levels. Scientists look at historical high-tide records (specifically HHWL, or Highest High Water Level) and add predicted sea-level rise scenarios (e.g., what happens if the ocean rises by 25 cm, 50 cm, or 100 cm).
+    I recently utilized this workflow to generate land use change map series for over 500 smallholder plots. The objective was two-fold: to extract annual land use histories for each plot from 1990 to 2024 and to estimate the planting year of oil palm following initial land clearing.
 </p>
 
 <p>
-    Land use / land cover maps (Optional but common). A map that show where the houses, fishponds, roads, and agricultural lands are. This helps scientists intersect the final flood map with real-world infrastructure to see what will actually get damaged.
+    To extract these values, I rely on <a href="https://pro.arcgis.com/en/pro-app/3.6/tool-reference/spatial-analyst/how-zonal-statistics-works.htm"target="_blank" class="Zonal Statistics-link">zonal statistics</a>. Since land use data is categorical (rasterized as classified values), this tool allows for precise spatial-statistical aggregation. While there are many statistical options available, I focus on the "Majority" and "Minority" outputs to characterize the land use composition within each plot. See how it works below.
 </p>
 
 </div>
 </div>
 
-<h2>How is the Simulation Performed?</h2>
+<h2>How is the Zonal Statistics Works?</h2>
 
 <div class="background-section">
 
 <div class="image-container">
-    <img src="../assets/media/IterationProcess.png" alt="Mapping Illustration">
+    <img src="../assets/media/zonal statistic 2.png" alt="Mapping Illustration">
 </div>
 
 <p class="image-caption">
-Iteration Process for 0.6 m Tidal Inundation.
+Zonal Statistics Calculation.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
 <p>
-    ILWIS relies heavily on Raster Maps (maps made up of a grid of tiny square pixels) and performs the simulation through a step-by-step mathematical recipe using its Map Calculation (MapCalc) tool and Scripts.
-Step 1: Setting the Water Height "Threshold"
+    However, relying solely on a simple majority can be misleading. A 5-hectare plot might be split, with 2.6 hectares used for crops and the remainder preserved as vegetation. If a simple majority calculation shows a marginal 1% lead, it might falsely suggest the entire plot is under active plantation. To avoid this, I incorporate the percentage of occurrence. By analyzing both the majority and minority values alongside their respective percentages, I can flag plots with mixed land use, providing a much more nuanced result than a standard automated script would achieve.
 </p>
 
 <p>
-    First, input the target flood level. For example, if the normal highest tide is 150 cm and they want to simulate 50 cm of sea-level rise, the total water threshold is set to 200 cm.
-Step 2: The Map Formula (The "Bucket Fill" test).
+    Once the data is processed, I utilize Data Driven Pages in ArcGIS to automate the export process. Each map frame is generated dynamically, including the owner’s name, total plot size, and the calculated plantation year. This automated approach has been a game-changer, allowing me to produce high-quality, site-specific visualization maps for hundreds of plots while significantly reducing my reporting turnaround time.
 </p>
-
-<p>
-    Using ILWIS MapCalc, a formula is written that compares the water threshold against the ground elevation map (DEM). The basic mathematical logic looks like this:
-</p>
-
-<ul>
-    <li>If the ground height is less than 200 cm, mark it as "Potential Flood".
-        </li>
-</ul>
-
-<ul>
-    <li>If the ground height is greater than 200 cm, mark it as "Safe".
-        </li>
-</ul>
-
-<p>
-    Next, we have to perform the "Nearest Neighbor" Iteration (Testing Connectivity).
-    This is where ILWIS does something very important. Just because a backyard is low-lying doesn't mean it will flood—there might be a hill or a seawall blocking the ocean from getting there.
-</p>
-
-<p>
-    ILWIS runs an iterative neighborhood operation.
-
-    It starts at the coastline (where the ocean water is actively touching the land).
-
-    It checks the neighboring pixels: "Are you lower than the water level? And are you touching a pixel that is already flooded?"
-
-    If yes, the water "flows" into that pixel.
-
-    The tool repeats (iterates) this check over and over across the map until the simulated water naturally stops spreading because it hit high ground.
-</p>
-
-</div>
 
 <h2>Result</h2>
 
 <div class="background-section">
 
 <div class="image-container">
-    <img src="../assets/media/rob inundation.png" alt="Mapping Illustration">
+    <img src="../assets/media/luc.png" alt="Mapping Illustration">
 </div>
 
 <p class="image-caption">
-Tidal Inundation Result for 1 m Sea-Level Rise.
+Land Use Change Visualization.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
