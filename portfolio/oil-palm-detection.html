@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oil Palm Year of Planting Detection | Spatiality</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* tambahan kecil untuk artikel */
+/*.article-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.article-content {
+    flex: 3;
+}
+
+.article-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}*/
+
+.image-container img,
+.image-container video {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TANGGAL */
+.article-date {
+    font-size: 14px;
+    color: #777;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* CAPTION GAMBAR */
+.image-caption {
+    font-size: 13px;
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 10px;
+    text-align:center;
+}
+
+/* CREDIT FOTO */
+.photo-credit {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* FOOTER ARTIKEL */
+.article-footer {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+/* SECTION TITLE */
+.article-footer h4 {
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background: white;
+}
+
+.share-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #333;
+    transition: 0.3s;
+}
+
+/* TWITTER */
+.share-btn.twitter:hover {
+    background: #1DA1F2;
+    border-color: #1DA1F2;
+}
+.share-btn.twitter:hover svg {
+    fill: white;
+}
+
+/* LINKEDIN */
+.share-btn.linkedin:hover {
+    background: #0077B5;
+    border-color: #0077B5;
+}
+.share-btn.linkedin:hover svg {
+    fill: white;
+}
+
+/* REDDIT */
+.share-btn.reddit:hover {
+    background: #FF4500;
+    border-color: #FF4500;
+}
+.share-btn.reddit:hover svg {
+    fill: white;
+}
+
+/* RELATED */
+.related-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.related-item a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #1a0dab;
+}
+
+.related-item p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.related-item span {
+    font-size: 12px;
+    color: #888;
+}
+
+/* AUTHOR */
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.author-photo {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.author-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/*.article-sidebar {
+    flex: 1;
+}
+
+.article-sidebar h3 {
+    margin-bottom: 15px;
+}*/
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html" class="logo">
+    <img src="../assets/icons/logo.png" alt="Spatiality Logo">
+</a>
+
+<nav class="desktop-nav">
+
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+Works <span class="arrow">▾</span>
+</button>
+
+<div class="dropdown-content">
+
+<a href="../experience.html">Experience</a>
+<a href="../portfolio.html">Portfolio</a>
+<a href="../services.html">Services</a>
+<a href="../gallery.html">Gallery</a>
+<a href="../resources.html">Resources</a>
+
+</div>
+</div>
+
+<a href="../resume.html">Resume</a>
+
+</nav>
+
+</header>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-nav">
+
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+
+<div class="mobile-dropdown">
+
+<div class="mobile-dropdown-btn">
+Works <span class="arrow">▾</span>
+</div>
+
+<div class="mobile-dropdown-content">
+
+<a href="../experience.html">Experience</a>
+<a href="../portfolio.html">Portfolio</a>
+<a href="../services.html">Services</a>
+<a href="../gallery.html">Gallery</a>
+<a href="../resources.html">Resources</a>
+
+</div>
+
+</div>
+
+<a href="../resume.html">Resume</a>
+
+</div>
+
+</div>
+
+<main class="about-container">
+
+<div class="about-left">
+
+<div class="about-intro">
+
+<div class="about-text">
+
+<h2>Oil Palm Year of Planting Detection</h2>
+
+<p class="article-date">
+Mon 15 Dec 2025 • 16:19 GMT by Spatiality
+</p>
+
+<div class="image-container">
+    <img src="../assets/media/yop.png" alt="Data Management Illustration">
+</div>
+
+<p class="image-caption">
+Oil Palm Year of Planting.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+<p>
+    The Global Oil Palm Extent and Year of Planting dataset (Zenodo: 11034131) offers a robust, high-resolution resource for mapping the temporal expansion of oil palm plantations on a global scale. By leveraging multi-temporal remote sensing, this dataset provides critical insights into plantation age and historical land-use conversion. However, users should remain mindful of inherent limitations, such as potential spectral confusion between oil palm and other tree crop varieties in specific tropical ecosystems and the inherent uncertainties associated with optical satellite imagery during peak cloud cover periods. Ground-truthing remains an essential step to ensure the local accuracy of these temporal classifications.
+</p>
+
+<p>
+    For practitioners and GIS analysts, this dataset serves as a vital tool for verifying regulatory compliance for smallholder plots. By applying Zonal Statistics to extract the dominant or mean year of planting within specific smallholder polygons, stakeholders can effectively audit land-use change against key sustainability benchmarks. This automated approach streamlines the process of distinguishing between historical expansion and recent developments, providing a quantifiable basis for demonstrating operational transparency across complex supply chains.
+</p>
+
+<p>
+    In the context of the Roundtable on Sustainable Palm Oil (RSPO), this data is instrumental in verifying the 2005 cut-off date for land clearing, helping to ensure that development does not infringe upon High Conservation Value (HCV) areas or primary forests established post-2005. Simultaneously, for EU Deforestation Regulation (EUDR) alignment, the dataset enables the precise identification of plantation establishment relative to the December 31, 2020, cut-off date. By integrating these temporal benchmarks, organizations can perform large-scale risk assessments and provide the necessary geo-referenced proof of compliance required to maintain access to premium international markets.
+</p>
+
+</div>
+</div>
+
+<h2>Leveraging Global Oil Palm Data for Sustainable Compliance</h2>
+
+<div class="background-section">
+
+<div class="image-container">
+    <img src="../assets/media/yop-app.png" alt="GEE App for Oil Palm Year of Planting Detection">
+</div>
+
+<p class="image-caption">
+Oil PalmYear of Planting Detection App.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+<p>
+    It is ridiculous to think that farmers often questioned by the verificator about the year of planting of their oil palm plots, are expected to provide a reliable answer. The reality is that many smallholder farmers lack formal records or may have inherited land without clear documentation. This gap in knowledge can lead to disputes or delays in certification processes, particularly when regulatory bodies require precise historical data for compliance verification. By utilizing the Global Oil Palm Extent and Year of Planting dataset, we can provide an objective, data-driven reference point that mitigates these uncertainties. I built this <a href="https://anhsirkwijaya.users.earthengine.app/view/deteksi-tahun-penanaman-kelapa-sawit" target="_blank">app</a> so that farmers can easily access and verify the year of planting information for their plots. And perhaps the verificator no longer using Google Earth to verify the planting years, plot by plot. This approach not only streamlines the verification process but also empowers farmers with credible information that supports their claims and enhances their ability to participate in sustainable supply chains.
+</p>
+
+
+<h2>Five Minutes Before Lunch Workflow</h2>
+
+<p>Since the dataset is available for public, we can utilize it for bulk processing and analysis. We can use zonal statistics to extract the dominant or mean year of planting within specific smallholder polygons five minutes before lunch. See this workflow below, not just year of planting, I prepared to check any information required to comply with the regulations. The workflow includes:</p>
+
+<ul><li>Standardize the attribute value</li></ul>
+
+<ul><li>Generate plot ID</li></ul>
+
+<ul><li>Summarize the intersected area with forest area utilization</li></ul>
+
+<ul><li>Add administrative address</li></ul>
+
+<ul><li>Check the intersection with HCV area</li></ul>
+
+<ul><li>Check the intersection with peatland</li></ul>
+
+<ul><li>Check the intersection with riparian zone</li></ul>
+
+<ul><li>Extract the dominant or mean year of planting</li></ul>
+
+
+<div class="background-section">
+
+<div class="image-container">
+    <img src="../assets/media/compliance workflow.png" alt="Mapping Illustration">
+</div>
+
+<p class="image-caption">
+Model Workflow for Compliance Verification.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+<div class="image-container">
+    <img src="../assets/media/plots.png" alt="Mapping Illustration">
+</div>
+
+<p class="image-caption">
+Model Result.
+<span class="photo-credit">Documentation by Spatiality</span>
+</p>
+
+
+<div class="about-right">
+
+
+<div class="tools-logos">
+
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+<div class="logo-box"></div>
+
+</div>
+
+</div>
+
+</main>
+
+<div class="article-footer">
+
+<!-- SHARE -->
+<div class="share-section">
+<h4>SHARE THIS:</h4>
+<div class="share-buttons">
+
+<a href="https://twitter.com/intent/tweet?url=YOUR_URL" target="_blank" class="share-btn twitter">
+    <!-- Twitter (X tetap pakai burung biar familiar) -->
+    <svg viewBox="0 0 24 24">
+        <path d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.2-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.2-1 .9-1.4 2.3-1.1 3.6-3.3-.2-6.3-1.7-8.3-4.2-1.1 1.8-.5 4.1 1.3 5.2-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.7 3.4 4.1-.6.2-1.2.2-1.8.1.5 1.6 2.1 2.7 3.8 2.8-1.4 1.1-3.2 1.7-5 1.7H2c1.8 1.2 4 1.8 6.2 1.8 7.4 0 11.5-6.1 11.5-11.5v-.5c.8-.6 1.5-1.3 2.1-2.1z"/>
+    </svg>
+</a>
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank" class="share-btn linkedin">
+    <svg viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8h4v12h-4V8zm7.5 0h3.8v1.7h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.7 2.6 4.7 6v6h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20h-4V8z"/>
+    </svg>
+</a>
+
+<a href="https://www.reddit.com/submit?url=YOUR_URL" target="_blank" class="share-btn reddit">
+    <svg viewBox="0 0 24 24">
+        <path d="M24 12c0-1.1-.9-2-2-2-.5 0-1 .2-1.4.6-1.4-1-3.2-1.6-5.1-1.7l1-3 2.1.5c0 .9.7 1.6 1.6 1.6S22 7.3 22 6.5 21.3 5 20.4 5c-.6 0-1.2.4-1.5.9l-2.6-.6c-.2 0-.4.1-.5.3l-1.2 3.6c-2 .1-3.8.7-5.3 1.7-.4-.4-.9-.6-1.4-.6-1.1 0-2 .9-2 2 0 .7.4 1.3.9 1.7-.1.4-.1.7-.1 1.1 0 3 3.6 5.4 8 5.4s8-2.4 8-5.4c0-.4 0-.8-.1-1.1.6-.4 1-1 1-1.7zM8 13.5c-.8 0-1.5-.7-1.5-1.5S7.2 10.5 8 10.5s1.5.7 1.5 1.5S8.8 13.5 8 13.5zm8 0c-.8 0-1.5-.7-1.5-1.5S15.2 10.5 16 10.5s1.5.7 1.5 1.5S16.8 13.5 16 13.5zm-8.5 2.3c.5.5 1.7 1.1 4.5 1.1s4-.6 4.5-1.1c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0-.4.4-1.4.9-3.8.9s-3.4-.5-3.8-.9c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7z"/>
+    </svg>
+</a>
+
+</div>
+
+
+<hr>
+
+<!-- RELATED -->
+<div class="related-section">
+<h4>RELATED:</h4>
+
+<div class="related-grid">
+
+<div class="related-item">
+<a href="../portfolio/20-yrs-land-use-change-visualization.html">20 Years of Land Use Change Visualization</a>
+<p>December 19, 2022</p>
+<span>Similar post</span>
+</div>
+
+<div class="related-item">
+<a href="../portfolio/cloud-based-collaborative-workflow.html">Cloud Based Collaborative Workflow for Smallholder Data Collecting</a>
+<p>January 24, 2023</p>
+<span>Similar post</span>
+</div>
+
+<div class="related-item">
+<a href="../portfolio/reporting-app.html">Reporting App Using ArcGIS Survey123</a>
+<p>December 10, 2023</p>
+<span>Similar post</span>
+</div>
+
+</div>
+</div>
+
+<hr>
+
+<!-- AUTHOR -->
+<div class="author-section">
+
+<div class="author-photo"
+style="background-image:url('../assets/media/me.jpeg')"></div>
+
+<div>
+<p class="author-label">PUBLISHED BY</p>
+<h4>Krishna Wijaya</h4>
+<a href="../portfolio.html">View all posts by Krishna Wijaya</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="copyright">
+© 2026 - Spatiality
+</div>
+
+<div class="footer-icons">
+
+<a href="mailto:krishnawijaya@ymail.com" title="Email">
+<calcite-icon icon="envelope" scale="l"></calcite-icon>
+</a>
+
+<a href="https://www.linkedin.com/in/krishna-wijaya-05b10b245/" target="_blank" title="LinkedIn">
+<calcite-icon icon="social-media" scale="l"></calcite-icon>
+</a>
+
+<a href="#" class="bmc-btn">
+<span style="margin-right:5px">☕</span> Buy me a coffee
+</a>
+
+</div>
+
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
