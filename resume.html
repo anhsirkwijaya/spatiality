@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resume | Spatiality</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* ========================================
+   RESUME PAGE
+======================================== */
+
+.resume-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 30px 60px;
+}
+
+/* TITLE */
+
+.resume-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.resume-title h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+/* NAME */
+
+.resume-name {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+/* LAST UPDATED */
+
+.resume-updated {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* DESCRIPTION */
+
+.resume-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* DOWNLOAD */
+
+.resume-download {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.resume-download a {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.resume-download a:hover {
+    background: #ffd900;
+    border-color: #ffd900;
+    color: #000;
+}
+
+/* PDF VIEWER */
+
+.resume-pdf {
+    width: 100%;
+    height: 1100px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .resume-container {
+        padding: 30px 15px 40px;
+    }
+
+    .resume-title h1 {
+        font-size: 26px;
+    }
+
+    .resume-name {
+        font-size: 18px;
+    }
+
+    .resume-pdf {
+        height: 800px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header>
+
+<a href="index.html" class="logo">
+    <img src="../spatiality/assets/icons/logo.png" alt="Spatiality Logo">
+</a>
+
+<nav class="desktop-nav">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+Works <span class="arrow">▾</span>
+</button>
+
+<div class="dropdown-content">
+
+<a href="experience.html">Experience</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="resources.html">Resources</a>
+
+</div>
+</div>
+
+<a href="resume.html" class="active">Resume</a>
+
+</nav>
+
+</header>
+
+
+<!-- ========================================
+     MOBILE MENU
+======================================== -->
+
+<div class="menu-toggle" id="menuToggle">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-nav">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<div class="mobile-dropdown">
+
+<div class="mobile-dropdown-btn">
+
+Works <span class="arrow">▾</span>
+
+</div>
+
+<div class="mobile-dropdown-content">
+
+<a href="experience.html">Experience</a>
+<a href="portofolio.html">Portofolio</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="resources.html">Resources</a>
+
+</div>
+
+</div>
+
+<a href="resume.html">Resume</a>
+
+</div>
+
+</div>
+
+
+<!-- ========================================
+     RESUME
+======================================== -->
+
+<main class="resume-container">
+
+
+<div class="resume-title">
+
+<h1>Curriculum Vitae</h1>
+
+</div>
+
+
+<div class="resume-name">
+
+Krishna Wijaya
+
+</div>
+
+
+<div class="resume-updated">
+
+Last updated in October 2024
+
+</div>
+
+
+<div class="resume-description">
+
+A GIS Analyst specializing in spatial analysis, remote sensing,
+land and water resource management, geospatial automation,
+participatory mapping, and spatial data systems.
+
+</div>
+
+
+<div class="resume-download">
+
+    <a href="https://drive.usercontent.google.com/download?id=12bb2_ot5T3RgLHMabclLuvgOoq2zOLCr&export=download&authuser=0">
+
+        Download PDF
+
+    </a>
+
+</div>
+
+
+<!-- PDF -->
+
+<iframe
+    class="resume-pdf"
+    src="https://drive.google.com/file/d/12bb2_ot5T3RgLHMabclLuvgOoq2zOLCr/preview"
+    title="Krishna Wijaya Curriculum Vitae">
+</iframe>
+
+
+</main>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+
+<div class="copyright">
+
+© 2026 - Krishna Wijaya
+
+</div>
+
+
+<div class="footer-icons">
+
+<a
+    href="mailto:krishnawijaya@ymail.com"
+    title="Email">
+
+<calcite-icon
+    icon="envelope"
+    scale="l">
+</calcite-icon>
+
+</a>
+
+
+<a
+    href="https://www.linkedin.com/in/krishna-wijaya-05b10b245/"
+    target="_blank"
+    title="LinkedIn">
+
+<calcite-icon
+    icon="social-media"
+    scale="l">
+</calcite-icon>
+
+</a>
+
+
+<a
+    href="#"
+    class="bmc-btn">
+
+<span style="margin-right:5px">☕</span>
+
+Buy me a coffee
+
+</a>
+
+</div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
