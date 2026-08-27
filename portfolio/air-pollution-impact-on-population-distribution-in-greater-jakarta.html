@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blue Carbon Mapping and Assessing Coastal Carbon Stock | Spatiality</title>
+<title>Air Pollution Impact on Population Distribution in Greater Jakarta | Spatiality</title>
 
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/icon.png">
@@ -278,55 +278,60 @@ Works <span class="arrow">▾</span>
 
 <div class="about-text">
 
-<h2>Mangrove Blue Carbon Estimation
-(Below & Above Ground)</h2>
+<h2>Air Pollution Impact on Population Distribution in Greater Jakarta</h2>
 
 <p class="article-date">
 Mon 15 Dec 2025 • 16:19 GMT by Spatiality
 </p>
 
 <div class="image-container">
-    <img src="../assets/media/blue carbon.png" alt="Blue Carbon Mapping">
+    <img src="../assets/media/air pollution.png" alt="Air Pollution Distribution">
 </div>
 
 <p class="image-caption">
-Blue Carbon Mapping and Assessment.
+Air Pollution Distribution.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
 <p>
-    Mangrove ecosystems play a crucial role in global climate mitigation by sequestering massive amounts of carbon, often referred to as blue carbon, both in their living biomass and deep sediment layers. Despite their ecological value, tracking these carbon stocks over large or remote coastal areas remains a challenge using traditional field methods alone. To overcome this, I developed a scalable geospatial workflow leveraging cloud-based remote sensing to map and estimate both above-ground and below-ground carbon stocks effectively.
-</p>
-
-<p>
-    The methodology is built entirely within the Google Earth Engine (GEE) environment, utilizing Sentinel-2 multispectral imagery to extract key vegetation indices. I applied a supervised machine learning approach—specifically the Random Forest algorithm—to accurately isolate and map the extent of the mangrove area. Once the mangrove mask was established, the workflow integrated global datasets for above-ground and below-ground carbon, as well as soil organic carbon, to quantify total carbon storage per hectare.
+    Rapid urbanization and high economic activity in metropolitan areas like Greater Jakarta often come with environmental trade-offs, most notably declining air quality. While air pollution monitoring is commonly conducted through stationary ground stations, assessing its actual human footprint requires a broader spatial perspective. To understand how population density intersects with atmospheric pollution levels, I developed a spatial analysis workflow combining satellite remote sensing and high-resolution demographic data.
 </p>
 
 </div>
 
-<h2>Methodology</h2>
+<h2>Workflow</h2>
 
 <div class="background-section">
 
 <div class="image-container">
-    <img src="../assets/media/blue carbon workflow.png" alt="Mapping Illustration">
+    <img src="../assets/media/air pollution method.png" alt="Workflow Illustration">
 </div>
 
 <p class="image-caption">
-Methodology Workflow.
+Air Pollution Impact to Population Distribution Workflow.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
+The analysis integrates multi-source datasets processed through a cloud and desktop GIS workflow:
+
+<ul><li>Air Quality Monitoring: Extracted tropospheric gas concentrations from Sentinel-5 TROPOMI data covering key parameters, including Carbon Monoxide (CO), Formaldehyde (HCHO), Nitrogen Dioxide (NO₂), Ozone (O₃), Sulfur Dioxide (SO₂), and Methane (CH₄).</li></ul>
+<ul><li>Demographic Distribution: Utilized population grids from the Global Human Settlement Layer (GHSL) to map human presence at a fine spatial resolution.</li></ul>
+<ul><li>Regulatory Framework: Incorporated standards and thresholds from the Ministry of Environment and Forestry Regulation (Permen LHK No. P.14/MENLHK/SETJEN/KUM.1/7/2020) as a baseline reference.</li></ul>
+
+<p>The workflow begins by extracting and processing population and atmospheric data within Google Earth Engine. The processed rasters are then brought into ArcGIS Pro, where a bivariate classification technique is applied to map the spatial intersection and trade-offs between air pollution intensity and population density.</p>
+
+<h2>Visualization</h2>
+
 <p>
-    The resulting spatial models provide a clear visualization of carbon density distribution across the landscape, with values ranging from 0 up to 150 Mg/Ha. By aggregating these values across the entire mapped zone, the GEE script computed a total estimated blue carbon stock of approximately 55,344.68 tonnes. These outputs highlight critical areas of dense carbon accumulation, offering robust, data-driven insights for conservation planning, blue carbon crediting initiatives, and monitoring the ecological health of restored or natural coastal ecosystems.
+    The resulting bivariate map provides a clear depiction of vulnerable zones across Jakarta and its surrounding urban centers. By cross-referencing pollution concentrations with population grids, the map highlights areas where high-density settlements overlap with elevated pollutant levels—offering critical insights for urban planners, policymakers, and public health initiatives to formulate targeted mitigation strategies in high-risk zones.
 </p>
 
 <div class="image-container">
-    <img src="../assets/media/blue carbon meranti.png" alt="Blue Carbon Estimation Results">
+    <img src="../assets/media/air pollution viz.png" alt="Air Pollution Visualization">
 </div>
 
 <p class="image-caption">
-Blue Carbon Estimation Results.
+Air Pollution Visualization.
 <span class="photo-credit">Documentation by Spatiality</span>
 </p>
 
